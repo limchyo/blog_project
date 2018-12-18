@@ -31,3 +31,13 @@ class Comment(models.Model):
     text = models.TextField()
     create_date = models.DateTimeField(timezone.now())
     approved_comments = models.BooleanField(default=False)
+
+    def approve(self):
+        self.approved_comments = True
+        self.save()
+
+    def get_absolute_url(self):
+        return reverse("post_detail")
+
+    def __str__(self):
+        return self.text
