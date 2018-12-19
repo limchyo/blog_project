@@ -1,11 +1,11 @@
 # from django.contrib.urls import url
 from django.urls import path
 from .views import (AboutView, PostListView, PostDetailView, CreatePostView,
-PostUpdateView, PostDeleteView, DraftListView), (add_comment_to_post,
+PostUpdateView, PostDeleteView, DraftListView, add_comment_to_post,
 comment_approve, comment_remove, post_publish)
 
 urlpatterns = [
-    path('/', PostListView.as_view(), name='post_list'),
+    path('', PostListView.as_view(), name='post_list'),
     path('about/', AboutView.as_view(), name='about'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
     path('post/new/', CreatePostView.as_view(), name='post_new'),
